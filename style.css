@@ -1,0 +1,24 @@
+h1{
+    color: whitesmoke;
+    text-align: right;
+    padding-right: 850px;
+}
+img{
+    width: 300px;
+    height: 300px;
+    float: left;
+}
+pre{
+    color: whitesmoke;
+    text-align: right;
+    padding-right: 750;
+    float: right;
+}
+p{
+    color: whitesmoke;
+    text-align: right;
+    padding-right: 950px;
+}
+
+
+
