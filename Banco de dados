@@ -1,0 +1,93 @@
+CREATE DATABASE projetoFinal
+default character set utf8mb3
+default collate utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS `projetoFinal`.`usuario_fisica` (
+  `idusuario_fisica` INT NOT NULL,
+  `nome_completo` VARCHAR(80) NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(8) NOT NULL,
+  `cpf` INT(20) NOT NULL,
+  `telefone` INT(20) NULL,
+  PRIMARY KEY (`idusuario_fisica`, `cpf`)
+  )DEFAULT CHARSET = utf8;
+  
+  insert into `projetoFinal`.`usuario_fisica`
+  (idusuario_fisica,nome_completo,email,senha,cpf,telefone)
+  values
+  ('1','Mariana Albuquerque','mariana@gmail.com','xxxxxxxx','00000000000','999999999');
+  
+  select*from `projetoFinal`.`usuario_fisica`;
+
+CREATE TABLE IF NOT EXISTS `projetoFinal`.`cadastro_empresas` (
+  `idcadastro_empresa` INT NOT NULL,
+  `razao_social` VARCHAR(45) NOT NULL,
+  `cnpj` INT(20) NOT NULL,
+  `login` VARCHAR(45) NOT NULL,
+  `senha` INT(8) NOT NULL,
+  `telefone` INT(20) NULL,
+  PRIMARY KEY (`idcadastro_empresa`, `cnpj`)
+  )DEFAULT CHARSET = utf8;
+  
+   insert into `projetoFinal`.`cadastro_empresas`
+  (idcadastro_empresa,razao_social,cnpj,login,senha,telefone)
+  values
+  ('1','Tranquilamente','00000000000000','tranquilamente','00000000000','999999999');
+  
+  select*from `projetoFinal`.`cadastro_empresas`;
+
+
+CREATE TABLE IF NOT EXISTS `projetoFinal`.`usuarios_corporativo` (
+  `idusuarios_corporativo` INT NOT NULL,
+  `nome_completo` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `senha` INT(8) NOT NULL,
+  `cpf` INT(20) NOT NULL,
+  `cnpj` INT(20) NOT NULL,
+  `telefone` INT(20) NOT NULL,
+  PRIMARY KEY (`idusuarios_corporativo`, `cpf`)
+  )DEFAULT CHARSET = utf8;
+  
+  insert into `projetoFinal`.`usuarios_corporativo`
+  (idusuarios_corporativo,nome_completo,email,senha,cpf,cnpj,telefone)
+  values
+  ('1','Tranquilamente','mariana@gmail.com','12345678','000000000000','00000000000000000','000000000000');
+  
+  select*from `projetoFinal`.`usuarios_corporativo`;
+
+
+CREATE TABLE IF NOT EXISTS `projetoFinal`.`assinaturas` (
+  `idassinaturas` INT NOT NULL,
+  `login` VARCHAR(45) NOT NULL,
+  `tipo_assinatura` VARCHAR(100) NULL,
+  `valor` DECIMAL(45) NULL,
+  `inicio_assinatura` DATE NULL,
+  `termino_assinatura` DATE NULL,
+  `sstatus` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idassinaturas`)
+  )DEFAULT CHARSET = utf8;
+  
+  insert into `projetoFinal`.`assinaturas`
+  (idassinaturas,login,tipo_assinatura,valor,inicio_assinatura,termino_assinatura,sstatus)
+  values
+  ('1','Tranquilamente','30 dias','50','2022-08-04','2022-08-04','Liberado');
+  
+  select*from `projetoFinal`.`assinaturas`;
+
+
+CREATE TABLE IF NOT EXISTS `projetoFinal`.`registro_vendas` (
+  `idregistro_vendas` INT NOT NULL,
+  `nomerazao_social` VARCHAR(45) NOT NULL,
+  `valor` DECIMAL(45) NULL,
+  `tipo_assinatura` VARCHAR(100) NULL,
+  `tempo` DATE NULL,
+  PRIMARY KEY (`idregistro_vendas`)
+  )DEFAULT CHARSET = utf8;
+  
+  
+  insert into `projetoFinal`.`registro_vendas`
+  (idregistro_vendas,nomerazao_social,valor,tipo_assinatura,tempo)
+  values
+  ('1','Tranquilamente','50','30 dias','2022-08-04');
+  
+  select*from `projetoFinal`.`registro_vendas`;
